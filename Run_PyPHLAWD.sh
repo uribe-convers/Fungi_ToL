@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script will call pyPHLAWD and ask you what clade you want to work on.
+# This script will call PyPHLAWD and ask you what clade you want to work on.
 # Simon Uribe-Convers - August 25, 2017 - http://simonuribe.com
 
 echo "What clade are you working on?"
@@ -27,6 +27,11 @@ echo $CLADE_NUM | awk -F'[_]' '{print $NF}'
 python ~/apps/PyPHLAWD/src/find_good_clusters_for_concat.py $CLADE_NUM
 
 mv temp.* subMSAtable mafft.out log.md.gz $CLADE.tre $CLADE_NUM
+
+##########
+## It doesn't really work from here on, it's better to use the other two scripts
+## to run RAxML and rename the tree tips separately
+##########
 
 # echo "Copy paste the line from above, right after 'line for get_min'"
 # read LINE_GET_MIN
