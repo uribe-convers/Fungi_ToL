@@ -35,3 +35,20 @@ In Agaricomycetes_155619, the taxon name CIMAP:Gly082010 needs to be fixed by re
 	* Removed duplicates in Geneious and ran RAxML without partitions.
 	* Tree looks very a bit better. Only delete two taxa
 * Pucciniomycotina_29000: got more sequences (917 from 569) and a longer alignment (from ~9600 to ~11600), but with no duplicates. 
+
+## Combining Clades
+
+The combined (backbone + clade tree) tree for some of these clades has less leaves that it should! This is after taking in consideration shared species. Couldn't pinpoint the problem but here are some examples:
+
+* Dothideomycetes_147541
+	* 7 taxa shared
+	* Tree should have 4241 tips
+	* Tree has 4235
+	* Offending taxa: _Cochliobolus heterostrophus, Pleospora herbarum, Trypethelium unknown, Dendrographa minor, Roccella fuciformis, Simonyella variegata_
+	* All of these are in the backbone but not in the combined tree.
+
+* Arthoniomycetes_147539
+	* 1 taxon shared
+	* Tree should have 485 tips
+	* Tree has 484
+	* Offending taxon: _Dendrographa minor_
