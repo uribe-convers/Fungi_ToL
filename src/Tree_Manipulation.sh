@@ -24,7 +24,10 @@ echo "Summarizing overlap and adding overlap to the branches as 'labels'"
 python /home/brlab/apps/PyPHLAWD/src/summarize_overlap.py $ALN $OUTFILE > $(echo $OUTFILE)"_Label.tre"
 
 echo ""
-echo "Pruning tree"
+echo "Pruning tree with default values, maximum branch length = 2, minimum overlap = 100"
+echo " If these values are too big, optional values can be given to the prunig" 
+echo "script 'prune_no_overlap.py' as command line arguments"
+
 python /home/brlab/apps/PyPHLAWD/src/prune_no_overlap.py $OUTFILE"_Label.tre"
 
 FILERENAME=*_Label.tre_pruned.tre
