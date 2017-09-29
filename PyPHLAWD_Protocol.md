@@ -24,6 +24,8 @@ In BLAST bits
 
 ## Building a database
 
+**For an automated way to do all this, read the last paragraph of this section**
+
 The first step is to build a database for the clade or species you are interested in. However, to be able to do this you'll need the NCBI data first. To download and create the NCBI database check PyPHLAWD's page [here](https://github.com/FePhyFoFum/PyPHLAWD) and then come back to _this_ tutorial.
 
 With your NCBI database ready, type the following: `python ~/apps/PyPHLAWD/src/setup_clade.py Clade_of_Interest GenBank_Database Location_to_Build`
@@ -55,6 +57,10 @@ If you copy and paste the last line (`python ~/app...get_min_overlap_multiple_se
 **Important,** when asked for the "Concat aln filename:", give the name that was produced by the `find_good_clusters_for_concat.py` script, not a _new_ name! For the above example it would be: `Orobanchaceae_91896/Orobanchaceae_91896_outaln`. This will produce a filtered file in `Orobanchaceae_91896/Orobanchaceae_91896_outaln.filt`.
 
 You can see how many sequences there are in the alignments and in the filtered alignment with: `pxlssq -s Orobanchaceae_91896/Orobanchaceae_91896_outaln` and `pxlssq -s Orobanchaceae_91896/Orobanchaceae_91896_outaln.filt`, respectively.
+
+### Automated way
+
+Ning Wang wrote a python script to do all these steps automatically. There is a sequential and a parallel version. The scripts are called `run_pyphlawd_sequential.py` and `run_pyphlawd_parallel.py`, respectively. For the parallel version, you will need a file with the names oif the taxa that you are running (one per line) and you run it like this: `parallel ./run_pyphlawd_parallel.py . {} < file_with_names`
 
 ## Phylogenetics
 

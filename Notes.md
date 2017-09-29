@@ -52,3 +52,27 @@ The combined (backbone + clade tree) tree for some of these clades has less leav
 	* Tree should have 485 tips
 	* Tree has 484
 	* Offending taxon: _Dendrographa minor_
+
+### Notes on Combining trees
+The order in which the trees are passed to the script matters! When combining Entomophthoromycotina\_1264859 with a combined tree (Combined_6), changing the order of the input trees results in the same number of tips in the combined tree, but the tips are different!  
+
+**I'm always picking the order that results in the largest combined tree**
+
+Geminibasidiomycetes_1708517 doesn't have mrca and when I included outgroups it results in a combined tree of few species. This clade only has 5 species though. **Skipping**
+
+Kickxellomycotina_451828 (23 taxa) has no mrca in the combined tree. I tried adding the complete Zygomycota_1264859 clade instead (40 taxa) but I get the following error: **Skipping**
+
+```
+new root label:Traceback (most recent call last):
+  File "../../src_PyPHLAWD/combine_trees.py", line 65, in <module>  
+    for i in nrt.children:  
+AttributeError: 'NoneType' object has no attribute 'children'
+```
+
+Lichinomycetes_315355 (33 taxa) has no mrca. **Skipping**
+
+Microsporidia_6029 (191 taxa) results in same number of taxa in combined tree when the order in which the trees are passed to the script is different, but the taxa are different. There is only one that is different though.
+
+Wallemiomycetes_431957 (7 taxa) has no mrca. **Skipped**
+
+**Skipped Sordariomycetes_147550 while it's runnig with outgroups!**
