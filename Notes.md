@@ -60,7 +60,7 @@ The order in which the trees are passed to the script matters! When combining En
 
 Geminibasidiomycetes_1708517 doesn't have mrca and when I included outgroups it results in a combined tree of few species. This clade only has 5 species though. **Skipping**
 
-Kickxellomycotina_451828 (23 taxa) has no mrca in the combined tree. I tried adding the complete Zygomycota_1264859 clade instead (40 taxa) but I get the following error: **Skipping**
+Kickxellomycotina\_451828 (23 taxa) has no mrca in the combined tree. I tried adding the complete Zygomycota_1264859 clade instead (40 taxa) but I get the following error: **Skipping**
 
 ```
 new root label:Traceback (most recent call last):
