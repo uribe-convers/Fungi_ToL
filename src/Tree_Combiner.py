@@ -10,7 +10,7 @@ backbone to add a second clade specific phylogeny and in turn, produces a second
 and larger combined phylogeny. The process goes on until there are no more clade 
 specific trees to add.
 
-This process uses the `combine_trees.py` script included with PyPHLAWD. However, 
+This approach uses the `combine_trees.py` script included with PyPHLAWD. However, 
 I've noticed that the size of the resulting combined tree changes depending on 
 the order in which the backbone and clade specific phylogenies are passed to it. 
 This curent script will run `combine_trees.py` twice, once with the backbone passed 
@@ -89,3 +89,4 @@ for i in tree_list[1:]:
 os.system("mv backbone.tre Final_Combined.tre")
 print("Your final combined tree has the following number of tips:")
 os.system("pxlstr -t Final_Combined.tre -n ")
+os.system("mkdir Results_Tree_Combiner; mv *.tre combined* Combined* NO* phyx* ./Results_Tree_Combiner")
