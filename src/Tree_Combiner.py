@@ -34,6 +34,9 @@ import __future__
 
 os.system("./Check_MRCA.sh")
 
+sys.stdout = open("Info.log", "a")
+sys.stderr = open ("Error.log", "w")
+
 # Run first iteration
 if os.path.exists("combined_backbone.tre"):
     os.remove("combined_backbone.tre")
@@ -85,8 +88,11 @@ for i in tree_list[1:]:
         os.remove("combined_backbone.tre")
         os.rename("combined_clade.tre", "backbone.tre")
     backbone_tree = "backbone.tre"
+    print("\n~~~~~~~~\n\nThe last clade added was %s\n\n~~~~~~~~\n\n" %i)
+    os.system("sleep 3")
+
 
 os.system("mv backbone.tre Final_Combined.tre")
-print("Your final combined tree has the following number of tips:")
-os.system("pxlstr -t Final_Combined.tre -n ")
-os.system("mkdir Results_Tree_Combiner; mv *.tre combined* Combined* NO* phyx* ./Results_Tree_Combiner")
+os.system("echo Your final combined tree has the following number of tips: >> Info.log")
+os.system("pxlstr -t Final_Combined.tre -n >> Info.log")
+os.system("mkdir Results_Tree_Combiner; mv *.tre combined* Combined* NO* phyx* Error.log Info.log ./Results_Tree_Combiner")

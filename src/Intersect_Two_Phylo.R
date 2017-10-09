@@ -2,10 +2,12 @@
 # should have. Also, finding which leaves get thrown out with `combine_trees.py`
 # Simon Uribe-Convers - Sep 07, 2017
 
-setwd("/Users/SAI/Documents/-Projects/--PyPHLAWD/Fungi_ToL/All_Clades_BestTrees/")
+setwd("/Users/SAI/Documents/-Projects/--PyPHLAWD/Fungi_ToL/All_Clades_BestTrees/test/")
 
 library(geiger)
 library(dplyr)
+
+# Trees must be in Newick format, otherwise change read.tree for read.nexus
 
 intersect.tree <- function(tree1, tree2){
   x <- read.tree(tree1)
@@ -35,3 +37,4 @@ offending.taxa <- function(tree1, tree2, combined_tree){
   cat("There are", length(setdiff(added, combined)), "leaves that are not in the combined tree and they are:\n",setdiff(added, combined))
 
 }
+
