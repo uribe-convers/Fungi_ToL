@@ -45,6 +45,7 @@ if os.path.exists("combined_clade.tre"):
     os.remove("combined_clade.tre")
 
 os.system("mkdir Combined_Tree_Stats")
+os.system("mkdir Added_Trees")
 
 
 trees = ""
@@ -89,10 +90,11 @@ for i in tree_list[1:]:
         os.rename("combined_clade.tre", "backbone.tre")
     backbone_tree = "backbone.tre"
     print("\n~~~~~~~~\n\nThe last clade added was %s\n\n~~~~~~~~\n\n" %i)
+    os.system("mv %s Added_Trees" %i)
     os.system("sleep 3")
 
 
 os.system("mv backbone.tre Final_Combined.tre")
 os.system("echo Your final combined tree has the following number of tips: >> Info.log")
 os.system("pxlstr -t Final_Combined.tre -n >> Info.log")
-os.system("mkdir Results_Tree_Combiner; mv *.tre combined* Combined* NO* phyx* Error.log Info.log ./Results_Tree_Combiner")
+os.system("mkdir Results_Tree_Combiner; mv *.tre combined* Combined* NO* phyx* Error.log Info.log Added_Trees ./Results_Tree_Combiner")
