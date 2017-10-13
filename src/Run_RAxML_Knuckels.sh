@@ -10,4 +10,4 @@ knuckles=*outaln.constraint.tre
 pxrmk -t $knuckles -o $(echo $knuckles)"_no_knuckles.tre"
 
 
-raxmlHPC-PTHREADS-AVX -T 15 -p 9876 -m GTRCAT -q *_outpart -g *outaln.constraint.tre_no_knuckles.tre -s $ALN -n $(echo $ALN)"_450bp.tre"
+raxmlHPC-PTHREADS-AVX2 -T 15 -p 9876 -m GTRCAT -q *_outpart -g *_no_knuckles.tre -s $ALN -n $(echo $ALN)".tre"
